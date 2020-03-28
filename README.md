@@ -6,8 +6,8 @@
 非公式なのでここのパッチを導入して起きた可能性のあるバグは公式TUSBに報告せず、Ponponに連絡をください。連絡先は下のほうに掲載しておきます。
 
 # パッチを作るうえでの協力者とお礼
-mkm75様 - CommandCompresserV2.jar
-Pastebin.com
+mkm75様 - CommandCompresserV2.jar ,
+Pastebin.com ,
 dropbox.com
 
 いつもありがとうございます。
