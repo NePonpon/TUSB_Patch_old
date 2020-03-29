@@ -1,0 +1,16 @@
+{
+  "criteria": {
+    "re_spe_hit_ghost": {
+      "trigger": "minecraft:player_hurt_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:zombie",
+          "nbt": "{Tags:[\"Re_Spe_Ghost\"]}"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "re_spe:enemy/hit_ghost"
+  }
+}

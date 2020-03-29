@@ -1,0 +1,18 @@
+{
+  "criteria": {
+    "spe_hurt_normal": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+            "type": {
+              "is_explosion": true
+            },
+            "blocked": false
+    }
+  }
+  }
+  },
+  "rewards": {
+    "function": "re_spe:death/explosion"
+  }
+}

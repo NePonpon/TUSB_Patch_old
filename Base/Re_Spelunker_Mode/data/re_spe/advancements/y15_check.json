@@ -1,0 +1,19 @@
+{
+    "criteria": {
+      "spe_cave": {
+        "trigger": "minecraft:location",
+        "conditions": {
+          "dimension": "minecraft:overworld",
+          "position": {
+            "y": {
+              "min": 0,
+              "max": 15
+            }
+          }
+        }
+      }
+        },
+        "rewards": {
+          "function": "re_spe:energy/cave_y15"
+        }
+      }

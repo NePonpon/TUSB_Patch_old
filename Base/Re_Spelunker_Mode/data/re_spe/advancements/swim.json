@@ -1,0 +1,13 @@
+{
+    "criteria": {
+      "spe_swim": {
+        "trigger": "minecraft:enter_block",
+        "conditions": {
+          "block": "minecraft:water"
+        }
+    }
+    },
+    "rewards": {
+      "function": "re_spe:energy/swim"
+    }
+  }

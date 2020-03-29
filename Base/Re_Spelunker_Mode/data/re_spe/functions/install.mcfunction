@@ -1,0 +1,1 @@
+tellraw @s [{"text":""},{"text":"\n[Re:Spelunker Mode] の導入に成功しました。\n[Re:Spelunker Mode] has been installed.\n\nあなたはすっごく貧弱になった。\nYou are VERY WEAK now.\n\nCreated by "},{"text":"Chuzume\n","color":"gold"},{"text":" "}]

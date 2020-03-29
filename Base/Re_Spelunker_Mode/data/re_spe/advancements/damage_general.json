@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "spe_hurt_normal": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "type": {
+            "is_projectile": false,
+            "is_fire": false,
+            "is_magic": false,
+            "is_explosion": false,
+            "is_lightning": false
+          },
+          "blocked": false,
+          "taken": {
+            "max": 5000.0
+          }
+        }
+      }
+    }
+},
+"rewards": {
+  "function": "re_spe:death/normal"
+}
+}
