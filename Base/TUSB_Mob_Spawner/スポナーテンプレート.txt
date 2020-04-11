@@ -4,7 +4,7 @@
 
 #ブロックスポナー : テンプレート
 
-/setblock ~ ~1 ~  minecraft:mob_spawner 0 replace {SpawnData:{},SpawnPotentials:[],      SpawnCount:0s,     SpawnRange:0s,     MaxNearbyEntities:0s,     RequiredPlayerRange:0s,     Delay:0s,     MaxSpawnDelay:60s,     MinSpawnDelay:60s}
+/setblock ~ ~1 ~ minecraft:mob_spawner 0 replace {SpawnData:{},SpawnPotentials:[],     SpawnCount:0s,     SpawnRange:0s,     MaxNearbyEntities:0s,     RequiredPlayerRange:0s,     Delay:-1s,     MaxSpawnDelay:60s,     MinSpawnDelay:60s}
 
 #Adv専用「空っぽのモンスタースポナー」
 /give @p minecraft:mob_spawner 1 0 {display:{Name:"空っぽのモンスタースポナー",Lore:["Advに置く空っぽ(に見える)スポナー"]},BlockEntityTag:{SpawnData:{id:"FallingSand",DropItem:0b,Block:"minecraft:barrier",Time:1},SpawnPotentials:[{Entity:{Block:"minecraft:barrier",Time:1,id:"FallingSand",DropItem:0b},Weight:1}],      SpawnCount:0s,     SpawnRange:0s,     MaxNearbyEntities:0s,     RequiredPlayerRange:0s,     Delay:-1s,     MaxSpawnDelay:60s,     MinSpawnDelay:60s}}
