@@ -1,3 +1,18 @@
 #擬態スポナー：テンプレート
 
-/summon ArmorStand ~ ~-1.4999 ~ {}
+/summon ArmorStand ~ ~-1.4999 ~ {NoGravity:1b,HurtByTimestamp:0,Attributes:[0:{Base:20.0d,Name:"generic.maxHealth"},1:{Base:0.0d,Name:"generic.knockbackResistance"},2:{Base:0.699999988079d,Name:"generic.movementSpeed"},3:{Base:0.0d,Name:"generic.armor"},4:{Base:0.0d,Name:"generic.armorToughness"}],Invulnerable:1b,FallFlying:0b,ShowArms:0b,PortalCooldown:0,AbsorptionAmount:0.0f,FallDistance:0.0f,DisabledSlots:0,DeathTime:0s,Pose:{},Invisible:1b,Tags:[0:"TypeChecked",1:"SystemEntity",2:"Spawner"],Small:1b,Health:20.0f,Air:300s,OnGround:0b,Marker:1b,Rotation:[0:0.0f,1:0.0f],NoBasePlate:1b,HurtTime:0s,Fire:0s,Passengers:[0:{CustomDisplayTile:1b,Invulnerable:1b,PortalCooldown:0,FallDistance:0.0f,id:"MinecartSpawner",Tags:[0:"TypeChecked",1:"SystemEntity",2:"SpawnerCore",3:"Spawner"],DisplayTile:"minecraft:chorus_plant",Air:0s,OnGround:1b,Dimension:0,Rotation:[0:0.0f,1:0.0f],DisplayOffset:12,Fire:-1s,DisplayData:0,SpawnData:{},SpawnPotentials:[],     SpawnCount:0s,     SpawnRange:0s,     MaxNearbyEntities:0s,     RequiredPlayerRange:0s,     Delay:-1s,     MinSpawnDelay:60s,     MaxSpawnDelay:60s}]}
+
+#ブロックスポナー : テンプレート
+
+/setblock ~ ~1 ~  minecraft:mob_spawner 0 replace {SpawnData:{},SpawnPotentials:[],      SpawnCount:0s,     SpawnRange:0s,     MaxNearbyEntities:0s,     RequiredPlayerRange:0s,     Delay:0s,     MaxSpawnDelay:60s,     MinSpawnDelay:60s}
+
+#Adv専用「空っぽのモンスタースポナー」
+/give @p minecraft:mob_spawner 1 0 {display:{Name:"空っぽのモンスタースポナー",Lore:["Advに置く空っぽ(に見える)スポナー"]},BlockEntityTag:{SpawnData:{id:"FallingSand",DropItem:0b,Block:"minecraft:barrier",Time:1},SpawnPotentials:[{Entity:{Block:"minecraft:barrier",Time:1,id:"FallingSand",DropItem:0b},Weight:1}],      SpawnCount:0s,     SpawnRange:0s,     MaxNearbyEntities:0s,     RequiredPlayerRange:0s,     Delay:-1s,     MaxSpawnDelay:60s,     MinSpawnDelay:60s}}
+
+#SpawnCount:0s : 一度に湧くMob数
+#SpawnRange:0s : Mobの湧く範囲(直方体)
+#MaxNearbyEntities:0s : 指定数以上のMob数が近くにいた場合に召喚を停止する
+#RequiredPlayerRange:0s : 指定した範囲内にプレイヤーがいた場合にスポナーが起動する(球体)
+#Delay:0s : Mobが湧くまでのtick 0になったら召喚
+#MaxSpawnDelay:60s : 次のDelayをランダムに決めるときの最大値
+#MinSpawnDelay:60s : 次のDelayをランダムに決めるときの最小値
