@@ -16,3 +16,6 @@
 #Delay:0s : Mobが湧くまでのtick 0になったら召喚
 #MaxSpawnDelay:60s : 次のDelayをランダムに決めるときの最大値
 #MinSpawnDelay:60s : 次のDelayをランダムに決めるときの最小値
+
+#色付きのスポナー作製用テンプレ
+/setblock ~ ~1 ~ minecraft:standing_sign 0 replace {Text1:"[{\"text\":\"test\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/setblock ~ ~ ~ command_block 0 repalce {Command:\\\"\\\"}\"}}]"}
