@@ -1,0 +1,13 @@
+﻿#####新アイテム原案
+
+###パラソル
+tag=SpNFK
+持っているとマイナス浮遊がつき落下で死ななくなる。
+旗のデザインはカービィのパラソルを参考に
+
+##最低限の入手コマンド
+/give @p banner 1 15 {SpNFK:true}
+
+##最低限の検知コマンド
+/scoreboard players tag @a add 	<任意のタグ> {SelectedItem:{tag:{SpNFK:true}}}
+
