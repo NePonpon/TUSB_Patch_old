@@ -1,12 +1,12 @@
-setblock  minecraft:chain_command_block 5 replace {Command:"",auto:1b}
+ï»¿setblock  minecraft:chain_command_block 5 replace {Command:"",auto:1b}
 
-===ƒXƒRƒAì¬===
-scoreboard objectives add FlyCount dummy ƒtƒ‰ƒCƒJƒEƒ“ƒg
-scoreboard objectives add Damagescore stat.damageTaken ƒ_ƒ[ƒWƒXƒRƒA
-scoreboard objectives add SpJump stat.jump ƒWƒƒƒ“ƒvƒXƒRƒA
-scoreboard objectives add Spkillfrom dummy €ˆöƒXƒRƒA()
-scoreboard objectives add SpBfun dummy åå•‚Ì‚Ó‚ñ
-===1tick‚Å‰ñ‚·‚Æ‚±‚ë===
+===ã‚¹ã‚³ã‚¢ä½œæˆ===
+scoreboard objectives add FlyCount dummy ãƒ•ãƒ©ã‚¤ã‚«ã‚¦ãƒ³ãƒˆ
+scoreboard objectives add Damagescore stat.damageTaken ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚¹ã‚³ã‚¢
+scoreboard objectives add SpJump stat.jump ã‚¸ãƒ£ãƒ³ãƒ—ã‚¹ã‚³ã‚¢
+scoreboard objectives add Spkillfrom dummy æ­»å› ã‚¹ã‚³ã‚¢()
+scoreboard objectives add SpBfun dummy è™è ã®ãµã‚“
+===1tickã§å›ã™ã¨ã“ã‚===
 setblock -1919 4 -124 minecraft:chain_command_block 13 replace {Command:"/clone ~-1 ~4 ~ ~-1 ~4 ~ ~-1 ~4 ~ filtered force minecraft:command_block 5",auto:1b}
 setblock -1918 4 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players tag @a remove SpfallNk",auto:1b}
 setblock -1917 4 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players tag @a add SpfallNk {ActiveEffects:[{Id:25b}]}",auto:1b}
@@ -42,30 +42,30 @@ setblock -1890 4 -124 minecraft:chain_command_block 13 replace {Command:"/clone 
 ----10
 setblock -1889 4 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players tag @a remove SpfallkillE {OnGround:1b}",auto:1b}
 setblock -1888 4 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players tag @a[tag=SpKILL] remove SpKILL {OnGround:1b}",auto:1b}
-===someƒ‰ƒCƒhƒoƒt===
+===someãƒ©ã‚¤ãƒ‰æ™‚ãƒãƒ•===
 setblock -1920 8 -124 minecraft:chain_command_block 5 replace {Command:"/effect @a[tag=SpRtest] minecraft:levitation 1 242 true",auto:1b}
 setblock -1919 8 -124 minecraft:chain_command_block 13 replace {Command:"/effect @a[tag=SpRtest] minecraft:jump_boost 4 128 true",auto:1b}
 setblock -1918 8 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players tag @a remove SpRtest",auto:1b}
-===“ñƒ}ƒX—‰ºkill‚ÌW‘å¬===
+===äºŒãƒã‚¹è½ä¸‹killã®é›†å¤§æˆ===
 setblock -1920 9 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players set @a[score_SpJump_min=1] FlyCount -7",auto:1b}
 setblock -1919 9 -124 minecraft:chain_command_block 5 replace {Command:"execute @a[m=!c,tag=!SpfallNk] ~ ~ ~ detect ~ ~ ~ minecraft:air -1 /scoreboard players add @a[tag=!SpfallkillE,m=!sp] FlyCount 1 {OnGround:0b}",auto:1b}
 setblock -1918 9 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_FlyCount_min=5,x=-1746,y=110,z=-137,rm=10] ~ ~ ~ /execute @a[x=0,y=4,z=2,rm=10] ~ ~ ~ /execute @a[x=-2726,y=88,z=-382,rm=10] ~ ~ ~ /execute @a[x=-54,y=23,z=34,rm=10] ~ ~ ~ /execute @a[x=880,y=20,z=-227,rm=10] ~ ~ ~ /execute @a[x=1049,y=4,z=34,rm=10] ~ ~ ~ /execute @a[x=1259,y=4,z=209,rm=10] ~ ~ ~ /execute @a[x=-21,y=3,z=-63,rm=10] ~ ~ ~ /execute @a[x=86,y=24,z=-56,rm=10] ~ ~ ~ /execute @a[x=-41,y=69,z=755,rm=10] ~ ~ ~ /execute @a[x=100,y=29,z=-56,rm=10] ~ ~ ~ /execute @a[x=24,y=18,z=-1826,rm=10] ~ ~ ~ /execute @a[x=9,y=58,z=-2199,rm=10] ~ ~ ~ /execute @a[x=28,y=114,z=-2209,rm=10] ~ ~ ~ /execute @a[x=1317,y=213,z=1561,rm=10] ~ ~ ~ /execute @a[x=198,y=139,z=-20,rm=10] ~ ~ ~ /execute @a[x=1331,y=97,z=1576,rm=10] ~ ~ ~ /execute @a[x=1337,y=214,z=1561,rm=10] ~ ~ ~ /execute @a[x=-2482,y=7,z=-137,rm=10] ~ ~ ~ /execute @a[x=-2374,y=79,z=-131,rm=10] ~ ~ ~ /execute @a[x=-1783,y=113,z=-137,rm=10] ~ ~ ~ /execute @a[x=-1919,y=113,z=-136,rm=10] ~ ~ ~ detect ~ ~ ~ minecraft:air -1 /scoreboard players set @a[c=1,tag=!SpKILL] Spkillfrom 3",auto:1b}
 setblock -1917 9 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players reset @a SpJump",auto:1b}
 setblock -1916 9 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players set @a FlyCount 0 {OnGround:1b}",auto:1b}
 setblock -1915 9 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players set @a FlyCount 0 {ActiveEffects:[{Id:8b,Amplifier:-128b}]}",auto:1b}
-===€–SkillƒƒO===
+===æ­»äº¡æ™‚killãƒ­ã‚°===
 setblock -1920 10 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players test @a Spkillfrom 0 100",auto:1b}
 setblock -1919 10 -124 minecraft:chain_command_block 13 replace {Command:"/scoreboard players tag @a[score_Spkillfrom_min=1] add SpKILL",auto:1b}
-setblock -1918 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=1,score_Spkillfrom=1] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=1,score_Spkillfrom=1]\"},{\"text\":\" ‚Íƒ_ƒ[ƒW‚ğó‚¯‚½‚Ì‚Å‹A‚Á‚½B\"}]",auto:1b}
-setblock -1917 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=2,score_Spkillfrom=2] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=2,score_Spkillfrom=2]\"},{\"text\":\" ‚Í–Ú‚É…‚ª“ü‚Á‚½‚Ì‚Å‹A‚Á‚½B\"}]",auto:1b}
-setblock -1916 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=3,score_Spkillfrom=3,tag=!SpfallkillE] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=3,score_Spkillfrom=3,tag=!SpfallkillE]\"},{\"text\":\" ‚Í‘«ñ‚ğ‚­‚¶‚¢‚½‚Ì‚Å‹A‚Á‚½B\"}]",auto:1b}
+setblock -1918 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=1,score_Spkillfrom=1] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=1,score_Spkillfrom=1]\"},{\"text\":\" ã¯ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’å—ã‘ãŸã®ã§å¸°ã£ãŸã€‚\"}]",auto:1b}
+setblock -1917 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=2,score_Spkillfrom=2] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=2,score_Spkillfrom=2]\"},{\"text\":\" ã¯ç›®ã«æ°´ãŒå…¥ã£ãŸã®ã§å¸°ã£ãŸã€‚\"}]",auto:1b}
+setblock -1916 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=3,score_Spkillfrom=3,tag=!SpfallkillE] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=3,score_Spkillfrom=3,tag=!SpfallkillE]\"},{\"text\":\" ã¯è¶³é¦–ã‚’ãã˜ã„ãŸã®ã§å¸°ã£ãŸã€‚\"}]",auto:1b}
 setblock -1915 10 -124 minecraft:chain_command_block 13 replace {Command:"/scoreboard players tag @a[score_Spkillfrom_min=3,score_Spkillfrom=3] add SpfallkillE",auto:1b}
-setblock -1914 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=4,score_Spkillfrom=4] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=4,score_Spkillfrom=4]\"},{\"text\":\" ‚Í“®•¨‚ÉŠš‚Ü‚ê‚½‚Ì‚Å‹A‚Á‚½B\"}]",auto:1b}
-setblock -1913 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=5,score_Spkillfrom=5] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=5,score_Spkillfrom=5]\"},{\"text\":\" ‚ÍƒRƒEƒ‚ƒŠ‚Éƒtƒ“‚ğ‚©‚¯‚ç‚ê‚½‚Ì‚Å‹A‚Á‚½B\"}]",auto:1b}
-setblock -1912 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=6,score_Spkillfrom=6] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=6,score_Spkillfrom=6]\"},{\"text\":\" ‚ÍƒAƒCƒeƒ€‚ÌŠp‚É“ª‚ğ‚Ô‚Â‚¯‚½‚Ì‚Å‹A‚Á‚½B\"}]",auto:1b}
+setblock -1914 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=4,score_Spkillfrom=4] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=4,score_Spkillfrom=4]\"},{\"text\":\" ã¯å‹•ç‰©ã«å™›ã¾ã‚ŒãŸã®ã§å¸°ã£ãŸã€‚\"}]",auto:1b}
+setblock -1913 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=5,score_Spkillfrom=5] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=5,score_Spkillfrom=5]\"},{\"text\":\" ã¯ã‚³ã‚¦ãƒ¢ãƒªã«ãƒ•ãƒ³ã‚’ã‹ã‘ã‚‰ã‚ŒãŸã®ã§å¸°ã£ãŸã€‚\"}]",auto:1b}
+setblock -1912 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=6,score_Spkillfrom=6] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=6,score_Spkillfrom=6]\"},{\"text\":\" ã¯ã‚¢ã‚¤ãƒ†ãƒ ã®è§’ã«é ­ã‚’ã¶ã¤ã‘ãŸã®ã§å¸°ã£ãŸã€‚\"}]",auto:1b}
 setblock -1910 10 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players reset @a Spkillfrom",auto:1b}
 setblock -1909 10 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players tag @a[tag=SpKILL] remove SpKILL {OnGround:1b}",auto:1b}
-===Šš‚İ‚Â‚«ƒ^ƒO•t—^===
+===å™›ã¿ã¤ãã‚¿ã‚°ä»˜ä¸===
 setblock -1920 8 -123 minecraft:chain_command_block 5 replace {Command:"/scoreboard players tag @e[tag=!SpA,type=Pig] add SpA",auto:1b}
 setblock -1919 8 -123 minecraft:chain_command_block 5 replace {Command:"/scoreboard players tag @e[tag=!SpA,type=Sheep] add SpA",auto:1b}
 setblock -1918 8 -123 minecraft:chain_command_block 5 replace {Command:"/scoreboard players tag @e[tag=!SpA,type=Cow] add SpA",auto:1b}
@@ -79,21 +79,21 @@ setblock -1911 8 -123 minecraft:chain_command_block 5 replace {Command:"/scorebo
 setblock -1910 8 -123 minecraft:chain_command_block 5 replace {Command:"/scoreboard players tag @e[tag=!SpA,type=MushroomCow] add SpA",auto:1b}
 setblock -1909 8 -123 minecraft:chain_command_block 5 replace {Command:"/scoreboard players tag @e[tag=SpA,type=Pig] remove SpA {Saddle:1b}",auto:1b}
 
-----‚±‚ê‚æ‚è‰º‚Í—LŒø‰»‚Ìƒpƒbƒ`‚Å{auto:1b}‚É‚·‚é
+----ã“ã‚Œã‚ˆã‚Šä¸‹ã¯æœ‰åŠ¹åŒ–ã®ãƒ‘ãƒƒãƒã§{auto:1b}ã«ã™ã‚‹
 
 /clone -1880 14 -188 -1879 14 -188 -1879 14 -188 replace move
 setblock -1880 14 -188 minecraft:chain_command_block 5 replace {Command:"/clone -1920 8 -123 -1920 8 -123 -1920 8 -123 filtered force minecraft:command_block 5"}
 
 /clone -1915 8 -177 -1915 8 -177 -1914 8 -177 replace move
 setblock -1915 8 -177 minecraft:chain_command_block 5 replace {Command:"/scoreboard players set @a[c=1,tag=LackOfMP,m=!c] Spkillfrom 7"}
-setblock -1911 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=7,score_Spkillfrom=7] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=7,score_Spkillfrom=7]\"},{\"text\":\" ‚ÍMP‚ªs‚«‚½‚Ì‚Å‹A‚Á‚½B\"}]",auto:1b}
+setblock -1911 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=7,score_Spkillfrom=7] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=7,score_Spkillfrom=7]\"},{\"text\":\" ã¯MPãŒå°½ããŸã®ã§å¸°ã£ãŸã€‚\"}]",auto:1b}
 
 /clone -1916 9 -189 -1916 9 -189 -1915 9 -189 replace move
-setblock -1916 9 -189 minecraft:chain_command_block 13 replace {Command:"/execute @a[score_kill_min=1,score_kill=1] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_kill_min=1,score_kill=1]\"},{\"text\":\" ‚Í‹F‚è‚ğ•ù‚°‚½‚Ì‚Å‹³‰ï‚É‹A‚Á‚½B\"}]"}
+setblock -1916 9 -189 minecraft:chain_command_block 13 replace {Command:"/execute @a[score_kill_min=1,score_kill=1] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_kill_min=1,score_kill=1]\"},{\"text\":\" ã¯ç¥ˆã‚Šã‚’æ§ã’ãŸã®ã§æ•™ä¼šã«å¸°ã£ãŸã€‚\"}]"}
 
 /setblock -1924 4 -124 minecraft:command_block 5 replace {Command:"/scoreboard players tag @a add SpRtest {RootVehicle:{}}"}
 
-----—LŒø‰»ƒpƒbƒ`  blockdata {auto:1b}
+----æœ‰åŠ¹åŒ–ãƒ‘ãƒƒãƒ  blockdata {auto:1b}
 
 scoreboard players reset @a Spkillfrom
 scoreboard players reset @a Damagescore
@@ -104,9 +104,9 @@ blockdata -1924 4 -125 {auto:1b}
 blockdata -1924 4 -124 {auto:1b}
 gamerule showDeathMessages false
 
-/tellraw @a [{"text":"ƒXƒyƒ‰ƒ“ƒJ[ƒVƒXƒeƒ€‚ª—LŒø‚É‚È‚è‚Ü‚µ‚½I","color":"green"}]
+/tellraw @a [{"text":"ã‚¹ãƒšãƒ©ãƒ³ã‚«ãƒ¼ã‚·ã‚¹ãƒ†ãƒ ãŒæœ‰åŠ¹ã«ãªã‚Šã¾ã—ãŸï¼","color":"green"}]
 
-----–³Œø‰»ƒpƒbƒ`
+----ç„¡åŠ¹åŒ–ãƒ‘ãƒƒãƒ
 
 gamerule showDeathMessages true
 blockdata -1880 14 -188 {auto:0b}
@@ -115,4 +115,4 @@ blockdata -1916 9 -189 {auto:0b}
 blockdata -1924 4 -125 {auto:0b}
 blockdata -1924 4 -124 {auto:0b}
 
-/tellraw @a [{"text":"ƒXƒyƒ‰ƒ“ƒJ[ƒVƒXƒeƒ€‚ª–³Œø‚É‚È‚è‚Ü‚µ‚½I","color":"green"}]
+/tellraw @a [{"text":"ã‚¹ãƒšãƒ©ãƒ³ã‚«ãƒ¼ã‚·ã‚¹ãƒ†ãƒ ãŒç„¡åŠ¹ã«ãªã‚Šã¾ã—ãŸï¼","color":"green"}]
