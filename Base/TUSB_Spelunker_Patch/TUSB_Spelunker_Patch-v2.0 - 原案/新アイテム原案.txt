@@ -11,3 +11,14 @@ tag=SpNFK
 ##最低限の検知コマンド
 /scoreboard players tag @a add 	<任意のタグ> {SelectedItem:{tag:{SpNFK:true}}}
 
+###亀の帽子(仮)
+tag=SpfiNK
+かぶっていると水中呼吸がつき、水の中に入れるようになる。
+帽子の色は濃い緑色に
+
+##最低限の入手コマンド
+/give @p minecraft:leather_helmet 1 0 {SpfiNK:true}
+
+##最低限の検知コマンド
+/scoreboard players tag @a add <任意のタグ> {Inventory:[{Slot:103b,tag:{SpfiNK:true}}]}
+
