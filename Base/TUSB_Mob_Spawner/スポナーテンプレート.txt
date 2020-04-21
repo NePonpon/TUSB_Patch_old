@@ -23,3 +23,8 @@
 #調べるためのやつ
 /entitydata @e[type=ArmorStand,r=0] {}
 
+#村人が載ってないとき用 <SpawnData>
+Passengers:[],Health:0.0f,DeathTime:19s,id:"Villager",ActiveEffects:[0:{ShowParticles:0b,Duration:20,Id:14b,Amplifier:0b}]
+
+#村人が載ってないとき用 <SpawnPotentials>
+{Entity:{Passengers:[],Health:0.0f,DeathTime:19s,id:"Villager",ActiveEffects:[0:{ShowParticles:0b,Duration:20,Id:14b,Amplifier:0b}]},Weight:1}
