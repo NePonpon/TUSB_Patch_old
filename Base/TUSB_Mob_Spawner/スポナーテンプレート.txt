@@ -20,6 +20,9 @@
 #色付きのスポナー作製用テンプレ
 /setblock ~ ~1 ~ minecraft:standing_sign 0 replace {Text1:"[{\"text\":\"test\",\"color\":\"black\",\"clickEvent\":{\"action\":\"run_command\",\"value\":\"/setblock ~ ~ ~ command_block 0 repalce {Command:\\\"\\\"}\"}}]"}
 
+#§=\\u00a7
+#"=\\\\\\\"
+
 #調べるためのやつ
 /entitydata @e[type=ArmorStand,r=0] {}
 
