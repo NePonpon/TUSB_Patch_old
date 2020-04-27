@@ -18,11 +18,10 @@
 /setblock -1903 5 -131 chain_command_block 5 replace {Command:"/scoreboard players tag @e[type=AreaEffectCloud,tag=!SanMitu] add SanMitu",auto:1b}
 /setblock -1902 5 -131 chain_command_block 5 replace {Command:"/scoreboard players tag @e[type=WitherSkull,tag=!SanMitu] add SanMitu",auto:1b}
 /setblock -1901 5 -131 chain_command_block 5 replace {Command:"/scoreboard players tag @e[type=FireworksRocketEntity,tag=!SanMitu] add SanMitu",auto:1b}
-/setblock -1989 5 -131 chain_command_block 5 replace {Command:"/scoreboard players tag @e[type=Boat,tag=!SanMitu] add SanMitu",auto:1b}
-/setblock -1988 5 -131 chain_command_block 5 replace {Command:"/execute @e[tag=RewardEgg] ~ ~ ~ /scoreboard players tag @e[tag=!SanMitu,c=1,r=5] add SanMitu",auto:1b}
-/setblock -1987 5 -131 chain_command_block 5 replace {Command:"/scoreboard players tag @e[type=ArmorStand,tag=!SanMitu] add SanMitu",auto:1b}
-/setblock -1987 5 -131 chain_command_block 5 replace {Command:"/execute @e[tag=SkillEgg] ~ ~ ~ /scoreboard players tag @e[tag=!SanMitu,c=1,r=5] add SanMitu",auto:1b}
 /setblock -1900 5 -131 chain_command_block 5 replace {Command:"/scoreboard players tag @e[type=Boat,tag=!SanMitu] add SanMitu",auto:1b}
+/setblock -1899 5 -131 chain_command_block 5 replace {Command:"/execute @e[tag=RewardEgg] ~ ~ ~ /scoreboard players tag @e[tag=!SanMitu,c=1,r=5] add SanMitu",auto:1b}
+/setblock -1898 5 -131 chain_command_block 5 replace {Command:"/scoreboard players tag @e[type=ArmorStand,tag=!SanMitu] add SanMitu",auto:1b}
+/setblock -1897 5 -131 chain_command_block 5 replace {Command:"/execute @e[tag=SkillEgg] ~ ~ ~ /scoreboard players tag @e[tag=!SanMitu,c=1,r=5] add SanMitu",auto:1b}
 /setblock -1878 14 -188 chain_command_block 5 replace {Command:"/clone -1920 5 -131 -1920 5 -131 -1920 5 -131 filtered force minecraft:command_block",auto:1b}
 /setblock -1919 4 -131 chain_command_block 5 replace {Command:"scoreboard players test #MituCount Global 30 *",auto:1b}
 /setblock -1918 4 -131 chain_command_block 13 replace {Command:"scoreboard players set #MituCount Global 0",auto:1b}
