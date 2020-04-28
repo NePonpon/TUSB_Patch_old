@@ -1,0 +1,23 @@
+﻿kill @e[type=ArmorStand,tag=ASGetExpID]
+setblock -1900 4 -192 chain_command_block 13 replace {Command:"/clone -1920 8 ~1 -1920 8 ~1 -1920 8 ~1 filtered force minecraft:command_block 5 ###経験値取得",auto:1b}
+blockdata -1918 8 -191 {auto:1b}
+blockdata -1917 8 -191 {auto:1b}
+blockdata -1916 8 -191 {auto:1b}
+blockdata -1915 8 -191 {auto:1b}
+blockdata -1914 8 -191 {auto:1b}
+blockdata -1913 8 -191 {auto:1b}
+blockdata -1912 8 -191 {auto:1b}
+blockdata -1911 8 -191 {auto:1b}
+fill -1890 8 -192 -1882 8 -192 air
+setblock -1890 8 -192 chain_command_block 5 replace {Command:"/scoreboard teams join FriendlyTeam @a[team=]",auto:1b}
+fill -1909 9 -192 -1900 9 -192 air
+setblock -1909 9 -192 chain_command_block 5 replace {Command:"/scoreboard players reset @a[score_LeaveGame_min=1] LeaveGame",auto:1b}
+setblock -1908 9 -192 chain_command_block 5 replace {Command:"/clone -1920 17 -200 -1920 17 -200 -1920 17 -200 filtered force minecraft:command_block 5 ###難易度調整",auto:1b}
+fill -1924 4 -128 -1911 4 -128 air
+setblock -1924 4 -128 glowstone
+scoreboard players tag @a remove GetExpID
+scoreboard objectives remove PlusExpID
+scoreboard objectives remove ExpID
+scoreboard objectives remove NextExpID
+scoreboard objectives remove GotExp
+tellraw @a [{"text":"オフライン経験値取得パッチをアンインストールしました。","color":"green","bold":true}]
