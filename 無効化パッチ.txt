@@ -1,0 +1,6 @@
+gamerule showDeathMessages true
+blockdata -1920 8 -123 {auto:0b}
+blockdata -1915 8 -177 {auto:0b}
+blockdata -1916 9 -189 {auto:0b}
+blockdata -1924 4 -125 {auto:0b}
+blockdata -1924 4 -124 {auto:0b}
