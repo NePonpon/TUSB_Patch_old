@@ -1,4 +1,4 @@
-scoreboard objectives add FlyCount dummy フライカウント
+﻿scoreboard objectives add FlyCount dummy フライカウント
 scoreboard objectives add Damagescore stat.damageTaken ダメージスコア
 scoreboard objectives add SpBfun dummy 蝙蝠のふん
 scoreboard objectives add Spkillfrom dummy 死因スコア()
@@ -69,8 +69,8 @@ scoreboard objectives add SpJump stat.jump ジャンプスコア
 /setblock -1911 11 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players reset @a Spkillfrom",auto:1b}
 /setblock -1909 11 -124 minecraft:command_block 5 replace {Command:"/tellraw @a[score_SpJump_min=2,score_SpJump=2] [{\"text\":\"<警告>\",\"color\":\"red\",\"bold\":true},{\"text\":\"\n一部のスペランカーシステムがバグにより作動していません。すぐにリログをしてください！\",\"bold\":false},{\"text\":\"\nあと数回ジャンプすると強制的にkillします。\",\"bold\":true}]",auto:1b}
 /setblock -1908 11 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players add @a[score_SpJump_min=2,score_SpJump=2] SpJump 1",auto:1b}
-/setblock -1908 11 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players set @a[score_SpJump_min=8] Spkillfrom 8",auto:1b}
-/setblock -1908 11 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players set @a[score_SpJump_min=8] SpJump 0",auto:1b}
+/setblock -1907 11 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players set @a[score_SpJump_min=8] Spkillfrom 8",auto:1b}
+/setblock -1906 11 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players set @a[score_SpJump_min=8] SpJump 0",auto:1b}
 /clone -1915 8 -177 -1915 8 -177 -1914 8 -177 replace move
 /setblock -1915 8 -177 minecraft:chain_command_block 5 replace {Command:"/scoreboard players set @a[tag=LackOfMP] Spkillfrom 7",auto:0b}
 /clone -1904 14 -188 -1878 14 -188 -1903 14 -188 replace move

@@ -1,4 +1,4 @@
-scoreboard objectives add FlyCount dummy フライカウント
+﻿scoreboard objectives add FlyCount dummy フライカウント
 scoreboard objectives add Damagescore stat.damageTaken ダメージスコア
 scoreboard objectives add SpBfun dummy 蝙蝠のふん
 scoreboard objectives add Spkillfrom dummy 死因スコア()
@@ -46,21 +46,4 @@ scoreboard objectives add SpJump stat.jump ジャンプスコア
 /setblock -1918 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @e[type=Player,tag=!SpwNk,m=!c] ~ ~ ~ detect ~ ~1.5 ~ water -1 scoreboard players set @e[type=Player,c=1,m=!sp] Spkillfrom 2",auto:1b}
 /setblock -1917 10 -124 minecraft:command_block 5 replace {Command:"/scoreboard players tag @e[type=Player] add SpfINk {Inventory:[{Slot:103b}]}",auto:1b}
 /setblock -1916 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @e[type=Player] ~ ~ ~ /execute @e[type=Item,rm=3,r=20,tag=!SystemEntity] ~ ~ ~ /scoreboard players add @e[type=Item,r=0,tag=!SpBf,c=1] FlyCount 1 {OnGround:0b}",auto:1b}
-/setblock -1915 10 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players set @e[type=Item,tag=!SpBf,score_FlyCount_min=0] FlyCount -1 {OnGround:1b}",auto:1b}
-/setblock -1914 10 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players reset @e[type=Item,tag=!SpBf,score_FlyCount=-1] FlyCount",auto:1b}
-/setblock -1913 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @e[type=Item,score_FlyCount_min=12] ~ ~ ~ detect ~ ~-1.5 ~ minecraft:air -1 /execute @e[type=Player,c=1,r=3,m=!sp] ~ ~ ~ scoreboard players set @e[type=Player,c=1,m=!c,tag=!SpfINk] Spkillfrom 6",auto:1b}
-/setblock -1912 10 -124 minecraft:command_block 5 replace {Command:"/scoreboard players add @e[type=Bat,tag=!WarpOnly] SpBfun 1",auto:1b}
-/setblock -1911 10 -124 minecraft:chain_command_block 5 replace {Command:"execute @e[type=Bat,score_SpBfun_min=40] ~ ~ ~ summon Item ~ ~ ~ {PickupDelay:9999,Item:{id:\"dye\",Count:1},Tags:[\"SpBf\"]}",auto:1b}
-/setblock -1910 10 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players set @e[type=Bat,score_SpBfun_min=40] SpBfun 0",auto:1b}
-/setblock -1909 10 -124 minecraft:command_block 5 replace {Command:"execute @e[tag=SpBf] ~ ~ ~ /particle depthsuspend ~ ~ ~ 0 0 0 1 3",auto:1b}
-/setblock -1908 10 -124 minecraft:chain_command_block 5 replace {Command:"/scoreboard players set @e[tag=SpBf] Spkillfrom 99 {OnGround:1b}",auto:1b}
-/setblock -1907 10 -124 minecraft:chain_command_block 5 replace {Command:"/kill @e[score_Spkillfrom_min=99,score_Spkillfrom=99]",auto:1b}
-/setblock -1906 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @e[tag=SpBf] ~ ~ ~ detect ~ ~ ~ minecraft:water -1 kill @e[c=1]",auto:1b}
-/setblock -1905 10 -124 minecraft:chain_command_block 5 replace {Command:"/execute @e[tag=SpBf] ~ ~ ~ execute @e[type=Player,m=!c,r=1,tag=!SpKILL] ~ ~ ~ scoreboard players set @e[type=Player,m=!sp,c=1,r=0] Spkillfrom 5",auto:1b}
-/setblock -1920 11 -124 minecraft:command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=1,score_Spkillfrom=1] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=1,score_Spkillfrom=1]\"},{\"text\":\" はダメージを受けたので帰った。\"}]",auto:1b}
-/setblock -1919 11 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=2,score_Spkillfrom=2] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=2,score_Spkillfrom=2]\"},{\"text\":\" は目に水が入ったので帰った。\"}]",auto:1b}
-/setblock -1918 11 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=3,score_Spkillfrom=3,tag=!SpfallkillE] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=3,score_Spkillfrom=3,tag=!SpfallkillE]\"},{\"text\":\" は足首をくじいたので帰った。\"}]",auto:1b}
-/setblock -1917 11 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=4,score_Spkillfrom=4] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=4,score_Spkillfrom=4]\"},{\"text\":\" は動物に噛まれたので帰った。\"}]",auto:1b}
-/setblock -1916 11 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=5,score_Spkillfrom=5] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=5,score_Spkillfrom=5]\"},{\"text\":\" はコウモリにフンをかけられたので帰った。\"}]",auto:1b}
-/setblock -1915 11 -124 minecraft:chain_command_block 5 replace {Command:"/execute @a[score_Spkillfrom_min=6,score_Spkillfrom=6] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_Spkillfrom_min=6,score_Spkillfrom=6]\"},{\"text\":\" はアイテムの角に頭をぶつけたので帰った。\"}]",auto:1b}
 /tellraw @a [{"text":"次に導入パッチ_2を実行してください"}]
