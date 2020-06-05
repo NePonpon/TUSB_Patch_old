@@ -97,7 +97,7 @@ setblock -1910 8 -123 minecraft:chain_command_block 5 replace {Command:"/scorebo
 setblock -1909 8 -123 minecraft:chain_command_block 5 replace {Command:"/scoreboard players tag @e[tag=SpA,type=Pig] remove SpA {Saddle:1b}",auto:1b}
 /setblock -1919 4 -125 minecraft:chain_command_block 13 replace {Command:"/clone -1920 13 -124 -1920 13 -124 -1920 13 -124 filtered force minecraft:command_block 5",auto:1b}
 /setblock -1918 4 -125 minecraft:chain_command_block 5 replace {Command:"/scoreboard players tag @a add SpfiNK {Inventory:[{Slot:103b,tag:{SpfiNK:true}}]}",auto:1b}
-/setblock -190 9 -200 minecraft:chain_command_block 5 replace {Command:"/clone -1918 109 -133 -1918 109 -133 -1918 109 -133 filtered force minecraft:command_block 5",auto:1b}
+/setblock -1905 9 -200 minecraft:chain_command_block 5 replace {Command:"/clone -1918 109 -133 -1918 109 -133 -1918 109 -133 filtered force minecraft:command_block 5",auto:1b}
 /tellraw @a [{"text":"次に導入パッチ_3を実行してください"}]
 
 /setblock -1917 4 -125 minecraft:chain_command_block 13 replace {Command:"/clone -1917 13 -124 -1917 13 -124 -1917 13 -124 filtered force minecraft:command_block 5",auto:1b}
