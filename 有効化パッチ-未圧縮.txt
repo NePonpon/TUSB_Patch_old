@@ -1,9 +1,0 @@
-scoreboard players reset @a Spkillfrom
-scoreboard players reset @a Damagescore
-scoreboard players reset @a SpJump
-blockdata -1920 8 -123 {auto:1b}
-blockdata -1915 8 -177 {auto:1b}
-blockdata -1916 9 -189 {auto:1b}
-blockdata -1924 4 -125 {auto:1b}
-blockdata -1924 4 -124 {auto:1b}
-gamerule showDeathMessages false
