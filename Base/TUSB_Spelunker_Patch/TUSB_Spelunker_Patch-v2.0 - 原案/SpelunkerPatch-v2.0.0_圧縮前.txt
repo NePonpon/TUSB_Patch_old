@@ -1,4 +1,8 @@
-﻿scoreboard objectives add FlyCount dummy フライカウント
+﻿最終更新:2020/06/29
+更新内容
+・<導入2>TNT即爆破させるようにするコマブロ調整: +2command(s)
+---
+scoreboard objectives add FlyCount dummy フライカウント
 scoreboard objectives add Damagescore stat.damageTaken ダメージスコア
 scoreboard objectives add SpBfun dummy 蝙蝠のふん
 scoreboard objectives add Spkillfrom dummy 死因スコア()
@@ -81,6 +85,8 @@ scoreboard objectives add SpJump stat.jump ジャンプスコア
 /setblock -1904 14 -188 minecraft:chain_command_block 5 replace {Command:"/clone -1920 8 -123 -1920 8 -123 -1920 8 -123 filtered force minecraft:command_block 5",auto:0b}
 /setblock -1903 15 -188 minecraft:lapis_block
 /setblock -1918 14 -188 minecraft:chain_command_block 13 replace {Command:"/fill ~1 ~1 ~ ~15 ~1 ~ minecraft:redstone_block 0 replace minecraft:lapis_block 0",auto:1b}
+/clone -1885 14 -188 -1883 14 -188 -1886 14 -188 replace move
+/setblock -1883 14 -188 minecraft:chain_command_block 5 replace {Command:"/entitydata @e[tag=TypeCheck,type=PrimedTnt] {Fuse:0s,Motion:[0d,0d,0d]}",auto:1b}
 /clone -1916 9 -189 -1916 9 -189 -1915 9 -189 replace move
 setblock -1916 9 -189 minecraft:chain_command_block 13 replace {Command:"/execute @a[score_kill_min=1,score_kill=1] ~ ~ ~ tellraw @a [{\"selector\":\"@a[score_kill_min=1,score_kill=1]\"},{\"text\":\" は祈りを捧げたので教会に帰った。\"}]"}
 setblock -1920 8 -123 minecraft:command_block 5 replace {Command:"/scoreboard players tag @e[tag=!SpA,type=Pig] add SpA",auto:0b}
