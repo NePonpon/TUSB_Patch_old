@@ -1,0 +1,17 @@
+#パッチ元コマ
+/scoreboard players set Sightseeing Settings 1
+/gamerule keepInventory true
+/tellraw @p [{"text":"keepInventory: on (疑似的に観光モードになります)"}]
+/scoreboard players set @p TutorialRead 524287
+/tellraw @p [{"text":"チュートリアルフラグ全解除"}]
+/gamerule reducedDebugInfo false
+/tellraw @p [{"text":"高度なデバッグ表示: on"}]
+/gamerule sendCommandFeedback true
+/tellraw @p [{"text":"プレイヤーに対するコマンドログ: on"}]
+/gamemode sp @p
+/tp @p -1871.5 14 -80.0 -90 30
+/gamemode c @ps
+/tellraw @p [{"text":"以上 クリエイティブ作業をするうえで必要なコマンドを実行しました。\nBy Ponpon 1.0.0"}]
+
+#コマンドパッチ
+/summon FallingSand ~ ~1 ~ {Time:1,Block:"chain_command_block",Data:0,DropItem:0,TileEntityData:{Command:"setblock ~ ~1 ~ air 0",auto:1b},Passengers:[{id:"FallingSand",Time:1,Block:"command_block",Data:0,DropItem:0,TileEntityData:{Command:"fill ~ ~1 ~ ~ ~10 ~ air",auto:1b},Passengers:[{id:"FallingSand",Time:1,Block:"command_block",Data:0,DropItem:0,TileEntityData:{Command:"scoreboard players set Sightseeing Settings 1",auto:1b},Passengers:[{id:"FallingSand",Time:1,Block:"command_block",Data:0,DropItem:0,TileEntityData:{Command:"/gamerule keepInventory true",auto:1b},Passengers:[{id:"FallingSand",Time:1,Block:"command_block",Data:0,DropItem:0,TileEntityData:{Command:"/tellraw @p [{\"text\":\"keepInventory: on (疑似的に観光モードになります)\"}]",auto:1b},Passengers:[{id:"FallingSand",Time:1,Block:"command_block",Data:0,DropItem:0,TileEntityData:{Command:"/scoreboard players set @p TutorialRead 524287",auto:1b},Passengers:[{id:"FallingSand",Time:1,Block:"command_block",Data:0,DropItem:0,TileEntityData:{Command:"/summon FallingSand ~ ~ ~ {Time:1,Block:\"command_block\",Data:0,DropItem:0,TileEntityData:{Command:\"/tellraw @p [{\\\"text\\\":\\\"チュートリアルフラグ全解除\\\"}]\",auto:1b},Passengers:[{id:\"FallingSand\",Time:1,Block:\"command_block\",Data:0,DropItem:0,TileEntityData:{Command:\"/gamerule reducedDebugInfo false\",auto:1b},Passengers:[{id:\"FallingSand\",Time:1,Block:\"command_block\",Data:0,DropItem:0,TileEntityData:{Command:\"/tellraw @p [{\\\"text\\\":\\\"高度なデバッグ表示: on\\\"}]\",auto:1b},Passengers:[{id:\"FallingSand\",Time:1,Block:\"command_block\",Data:0,DropItem:0,TileEntityData:{Command:\"/gamerule sendCommandFeedback true\",auto:1b},Passengers:[{id:\"FallingSand\",Time:1,Block:\"command_block\",Data:0,DropItem:0,TileEntityData:{Command:\"/tellraw @p [{\\\"text\\\":\\\"プレイヤーに対するコマンドログ: on\\\"}]\",auto:1b},Passengers:[{id:\"FallingSand\",Time:1,Block:\"command_block\",Data:0,DropItem:0,TileEntityData:{Command:\"/gamemode sp @p\",auto:1b},Passengers:[{id:\"FallingSand\",Time:1,Block:\"command_block\",Data:0,DropItem:0,TileEntityData:{Command:\"/tp @p -1871.5 14 -80.0 -90 30\",auto:1b},Passengers:[{id:\"FallingSand\",Time:1,Block:\"command_block\",Data:0,DropItem:0,TileEntityData:{Command:\"/gamemode c @p\",auto:1b},Passengers:[{id:\"FallingSand\",Time:1,Block:\"command_block\",Data:0,DropItem:0,TileEntityData:{Command:\"/tellraw @p [{\\\"text\\\":\\\"以上 クリエイティブ作業をするうえで必要なコマンドを実行しました。\\\\nBy Ponpon 1.0.0\\\"}]\",auto:1b},Passengers:[{id:\"FallingSand\",Time:1,Block:\"command_block\",Data:0,DropItem:0,TileEntityData:{Command:\"fill ~ ~ ~ ~ ~-2 ~ air\",auto:1b}}]}]}]}]}]}]}]}]}]}",auto:1b}}]}]}]}]}]}]}

@@ -1,0 +1,87 @@
+--既存スコア
+GotExpFlag :  : ネザースターの数を保存する
+ExpMessageFlag : : ここではアマスタとプレイヤーを同期するためのスコア置き場にする。
+
+--追加スコア
+ExpID : 経験値保持同期用ID : プレイヤーとアマスタを同期させるためのID
+ #NextExpID : 次に取得させるID : 同意
+GotExp : 保存経験値量 : オフラインプレイヤーの取得経験値
+ArmorExpToLevel : レベルアップまでの経験値量 : アマスタの必要経験値量を保存
+ArmorLevel : アマスタのLevel : アマスタのレベルを保存
+ArmorNextExp : 次レベルの経験値量 : 次のレベルの必要経験値量を保存。7ずつプラスする
+ExpSystemFlag : 経験値システム処理フラグ : 	1=経験値未取得フラグ(プレイヤー・アマスタ問わず)
+						2=プレイヤー転職時アマスタにコピペするフラグ
+						3=アマスタのレベルが上がった時の処理フラグ
+						4=ログインフラグ
+						5=登録フラグ
+--必要タグ
+ExpEntity : ID取得済みのプレイヤーと保存用アマスタに付与
+WillGetID : ID未取得のアマスタに付与。取得後削除
+WillGetExp : 経験値取得者に付与
+===
+--登録処理
+ログイン時or初期ログイン時[tag=!Player]のプレイヤーのフラグ5にする
+ExpEntityが付いてないFlag=5のプレイヤーに#NextExpIDをExpIDに付与
+WillGetIDが付いているアマスタを召喚
+WillGetIDが付いているアマスタに#NextExpIDをExpIDに付与
+WillGetIDを削除
+#NextExpIDを+１する
+登録通知を送信
+プレイヤーにExpEntityを付与
+フラグリセット
+
+--ログイン時取得処理
+フラグを4にセット
+ログイン時未取得経験値があるかどうかチェックする処理を実行
+～
+#同期処理
+GotExpがあれば経験値取得処理
+
+--経験値取得時の処理
+clearで経験値を取得
+GotExpFlag_min=1のプレイヤーの経験値量を全てのアマスタのGotExpに加算
+(ExpEntity:Player)にフラグ１を付与
+プレイヤーに経験値付与のコマブロ起動
+GotExpFlagのスコアを(ExpEntity:ArmorStand)のArmorExpToLevelから引く
+ArmorExpToLevelがマイナスになったらアマスタのExpSystemFlagを3にする
+フラグが3ならレベルアップを起動
+それぞれに経験値を与える処理をスタートさせる
+
+---プレイヤーに経験値を付与する処理
+フラグが立っているプレイヤーをランダムに選びタグ(WillGetExp)を付与する
+#同期処理
+0のアマスタのGotExpで(WillGetExp)ExpToLevelを減算する
+GotExpの値でtellrawを出す
+0のアマスタのGotExpをリセットする
+WillGetExpのExpSystemFlagをリセット
+WillGetExpを削除
+ExpSystemFlagが1のプレイヤーがいたら
+リピート
+
+---アマスタのLvUP処理 (アマスタが50Lv以上になったら除外する)
+フラグ付きのアマスタのレベルを1上げる
+ArmorExpToLevelにArmorNextExpを加算する
+ArmorNextExpを7上げる
+ArmorExpToLevel_min=1ならフラグ削除
+ArmorLevelが50になったらメッセージを出す
+フラグありなら、クロックする。
+
+--転職時アマスタに色々コピーする処理
+転職者にフラグを立てる
+処理をスタートさせる
+
+-
+#ID同期システム
+フラグ立ってる人のレベルをコピー:ArmorLevel
+〃残り経験値:ArmorExpToLevel
+ArmorNextExpにArmorLevelをコピー
+ArmorNextExp×７をする
+ArmorExpToLevelが0ならフラグを立てる
+レベルアップ処理を起動する
+いろいろリセットする
+
+-#ID同期システム
+アマスタそれぞれのExpIDをそれぞれのExpMessageFlagにコピー
+何かしらフラグが立ってる人のIDで引く
+0になったアマスタを対象にする
+(適応場所によって微々の調整あり)
