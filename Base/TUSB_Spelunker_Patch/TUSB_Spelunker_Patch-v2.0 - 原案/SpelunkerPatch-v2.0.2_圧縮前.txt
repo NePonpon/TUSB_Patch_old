@@ -4,7 +4,7 @@
   パラソルを使用しているとき高所から落ちるとダメージで死んでしまうのを調節
   地下世界の入り口に除外アマスタを設置 +1command
   コウモリにSpAを付与しないように変更 -1command
-  その他細かい調整 -1command
+  その他細かい調整(落下kill処理に無駄なコマブロが存在したので削除) -1command
 ---
 scoreboard objectives add FlyCount dummy フライカウント
 scoreboard objectives add Damagescore stat.damageTaken ダメージスコア

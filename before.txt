@@ -1,52 +1,11 @@
-/scoreboard teams add rank110 ランクチェスト
-/scoreboard teams add ISFChest トカルトチェスト
-/scoreboard teams add freechest LootTable設定なし
-/scoreboard teams add underchest 地下チェスト
-/scoreboard teams option freechest color green
-/scoreboard teams option ISFChest color aqua
-/scoreboard teams option rank110 color red
-/scoreboard teams option underchest color dark_blue
-/setblock -1924 4 -114 command_block 5 replace {auto:1b,Command:"/testfor @e[tag=CheckLoot]"}
-/setblock -1919 4 -114 chain_command_block 13 replace {auto:1b,Command:"/clone -1920 8 -114 -1920 10 -114 -1920 8 -114 filtered force minecraft:command_block 5"}
-/setblock -1920 8 -114 command_block 5 replace {auto:1b,Command:"/execute @e[tag=CheckLoot] ~ ~ ~ detect ~ ~ ~ minecraft:chest -1 /scoreboard players tag @e[c=1] remove CheckBlock"}
-/setblock -1919 8 -114 chain_command_block 5 replace {auto:1b,Command:"/execute @e[tag=CheckLoot] ~ ~ ~ detect ~ ~ ~ minecraft:trapped_chest -1 /scoreboard players tag @e[c=1] remove CheckBlock"}
-/setblock -1918 8 -114 chain_command_block 5 replace {auto:1b,Command:"/kill @e[tag=CheckBlock]"}
-/setblock -1920 9 -114 command_block 5 replace {auto:1b,Command:"/execute @e[tag=CheckLoot] ~ ~ ~ testforblock ~ ~ ~ minecraft:chest -1"}
-/setblock -1919 9 -114 chain_command_block 13 replace {auto:1b,Command:"/scoreboard players tag @e[tag=CheckLoot] add freechest"}
-/setblock -1918 9 -114 chain_command_block 5 replace {auto:1b,Command:"/execute @e[tag=CheckLoot] ~ ~ ~ testforblock ~ ~ ~ minecraft:trapped_chest -1"}
-/setblock -1917 9 -114 chain_command_block 13 replace {auto:1b,Command:"/scoreboard players tag @e[tag=CheckLoot] add freechest"}
-/setblock -1916 9 -114 chain_command_block 5 replace {auto:1b,Command:"/execute @e[tag=CheckLoot] ~ ~ ~ testforblock ~ ~ ~ minecraft:trapped_chest -1 {LootTable:\"usb:chests/rank1\"}"}
-/setblock -1915 9 -114 chain_command_block 13 replace {auto:1b,Command:"/scoreboard players tag @e[tag=CheckLoot] add rank110"}
-/setblock -1914 9 -114 chain_command_block 5 replace {auto:1b,Command:"/execute @e[tag=CheckLoot] ~ ~ ~ testforblock ~ ~ ~ minecraft:trapped_chest -1 {LootTable:\"usb:chests/rank2\"}"}
-/setblock -1913 9 -114 chain_command_block 13 replace {auto:1b,Command:"/scoreboard players tag @e[tag=CheckLoot] add rank110"}
-/setblock -1912 9 -114 chain_command_block 5 replace {auto:1b,Command:"/execute @e[tag=CheckLoot] ~ ~ ~ testforblock ~ ~ ~ minecraft:trapped_chest -1 {LootTable:\"usb:chests/rank3\"}"}
-/setblock -1911 9 -114 chain_command_block 13 replace {auto:1b,Command:"/scoreboard players tag @e[tag=CheckLoot] add rank110"}
-/setblock -1910 9 -114 chain_command_block 5 replace {auto:1b,Command:"/execute @e[tag=CheckLoot] ~ ~ ~ testforblock ~ ~ ~ minecraft:trapped_chest -1 {LootTable:\"usb:chests/rank4\"}"}
-/setblock -1909 9 -114 chain_command_block 13 replace {auto:1b,Command:"/scoreboard players tag @e[tag=CheckLoot] add rank110"}
-/setblock -1908 9 -114 chain_command_block 5 replace {auto:1b,Command:"/execute @e[tag=CheckLoot] ~ ~ ~ testforblock ~ ~ ~ minecraft:trapped_chest -1 {LootTable:\"usb:chests/rank5\"}"}
-/setblock -1907 9 -114 chain_command_block 13 replace {auto:1b,Command:"/scoreboard players tag @e[tag=CheckLoot] add rank110"}
-/setblock -1906 9 -114 chain_command_block 5 replace {auto:1b,Command:"/execute @e[tag=CheckLoot] ~ ~ ~ testforblock ~ ~ ~ minecraft:trapped_chest -1 {LootTable:\"usb:chests/rank6\"}"}
-/setblock -1905 9 -114 chain_command_block 13 replace {auto:1b,Command:"/scoreboard players tag @e[tag=CheckLoot] add rank110"}
-/setblock -1904 9 -114 chain_command_block 5 replace {auto:1b,Command:"/execute @e[tag=CheckLoot] ~ ~ ~ testforblock ~ ~ ~ minecraft:trapped_chest -1 {LootTable:\"usb:chests/rank7\"}"}
-/setblock -1903 9 -114 chain_command_block 13 replace {auto:1b,Command:"/scoreboard players tag @e[tag=CheckLoot] add rank110"}
-/setblock -1902 9 -114 chain_command_block 5 replace {auto:1b,Command:"/execute @e[tag=CheckLoot] ~ ~ ~ testforblock ~ ~ ~ minecraft:trapped_chest -1 {LootTable:\"usb:chests/rank8\"}"}
-/setblock -1901 9 -114 chain_command_block 13 replace {auto:1b,Command:"/scoreboard players tag @e[tag=CheckLoot] add rank110"}
-/setblock -1900 9 -114 chain_command_block 5 replace {auto:1b,Command:"/execute @e[tag=CheckLoot] ~ ~ ~ testforblock ~ ~ ~ minecraft:trapped_chest -1 {LootTable:\"usb:chests/rank9\"}"}
-/setblock -1899 9 -114 chain_command_block 13 replace {auto:1b,Command:"/scoreboard players tag @e[tag=CheckLoot] add rank110"}
-/setblock -1898 9 -114 chain_command_block 5 replace {auto:1b,Command:"/execute @e[tag=CheckLoot] ~ ~ ~ testforblock ~ ~ ~ minecraft:trapped_chest -1 {LootTable:\"usb:chests/rank10\"}"}
-/setblock -1897 9 -114 chain_command_block 13 replace {auto:1b,Command:"/scoreboard players tag @e[tag=CheckLoot] add rank110"}
-/setblock -1896 9 -114 chain_command_block 5 replace {auto:1b,Command:"/execute @e[tag=CheckLoot] ~ ~ ~ testforblock ~ ~ ~ minecraft:chest -1 {LootTable:\"usb:chests/iceworld\"}"}
-/setblock -1895 9 -114 chain_command_block 13 replace {auto:1b,Command:"/scoreboard players tag @e[tag=CheckLoot] add ISFChest"}
-/setblock -1894 9 -114 chain_command_block 5 replace {auto:1b,Command:"/execute @e[tag=CheckLoot] ~ ~ ~ testforblock ~ ~ ~ minecraft:trapped_chest -1 {LootTable:\"usb:chests/iceworld\"}"}
-/setblock -1893 9 -114 chain_command_block 13 replace {auto:1b,Command:"/scoreboard players tag @e[tag=CheckLoot] add ISFChest"}
-/setblock -1892 9 -114 chain_command_block 5 replace {auto:1b,Command:"/execute @e[tag=CheckLoot] ~ ~ ~ testforblock ~ ~ ~ minecraft:trapped_chest -1 {LootTable:\"usb:chests/underworld\"}"}
-/setblock -1891 9 -114 chain_command_block 13 replace {auto:1b,Command:"/scoreboard players tag @e[tag=CheckLoot] add underchest"}
-/setblock -1890 9 -114 chain_command_block 5 replace {auto:1b,Command:"/execute @e[tag=CheckLoot] ~ ~ ~ testforblock ~ ~ ~ minecraft:chest -1 {LootTable:\"usb:chests/underworld\"}"}
-/setblock -1889 9 -114 chain_command_block 13 replace {auto:1b,Command:"/scoreboard players tag @e[tag=CheckLoot] add underchest"}
-/setblock -1920 10 -114 command_block 5 replace {auto:1b,Command:"/scoreboard teams join freechest @e[tag=freechest]"}
-/setblock -1919 10 -114 chain_command_block 5 replace {auto:1b,Command:"/scoreboard teams join ISFChest @e[tag=ISFChest]"}
-/setblock -1918 10 -114 chain_command_block 5 replace {auto:1b,Command:"/scoreboard teams join underchest @e[tag=underchest]"}
-/setblock -1917 10 -114 chain_command_block 5 replace {auto:1b,Command:"/scoreboard teams join rank110 @e[tag=rank110]"}
-/setblock -1916 10 -114 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players tag @e[tag=CheckLoot] remove CheckLoot"}
-/give @p command_block 64 0 {display:{Name:"チェッカー設置コマブロ",Lore:[チェスト・トラップチェストの,上に設置するとチェッカーを召喚します。, ,rankチェストは赤色,トカルトチェストは青色,地下世界チェストは水色,LootTable未設定は緑色,に発光します。]},ench:[],BlockEntityTag:{Command:"/summon Shulker ~ ~-1 ~ {Glowing:true,NoAI:true,ActiveEffects:[{Id:14,Duration:2147483647,ShowParticles:false,}],Attributes:[{Name:generic.maxHealth,Base:0.1d}],Tags:[CheckLoot,CheckBlock,TypeChecked],DeathLootTable:empty}",auto:1b}}
-/tellraw @p [{"text":"チェストLootTableチェッカー設置コマブロを配布しました。","bold":true},{"text":"\nチェストのルートテーブルが、","bold":false},{"text":"\nrankチェストなら赤色に","color":"red"},{"text":"\nトカルトチェストなら青色に","color":"blue"},{"text":"\n地下世界チェストなら水色に","color":"aqua"},{"text":"\n未設定チェストなら緑色に","color":"green"},{"text":"\n発光します！","color":"white"},{"text":"\nBy Ponpon v1.0.0"}]
+/clone -1913 8 -123 -1909 8 -123 -1914 8 -123 replace move
+/blockdata -1920 13 -124 {Command:"/effect @a[tag=SpNFK] minecraft:jump_boost 5 255 true"}
+/blockdata -1919 13 -124 {Command:"/effect @a[tag=SpNFK] minecraft:levitation 1 252"}
+/clone -1909 9 -124 -1907 9 -124 -1910 9 -124 replace move
+/blockdata -1908 9 -124 {Command:"/scoreboard players set @a FlyCount 0 {ActiveEffects:[{Id:8b,Amplifier:-1b}]}"}
+/setblock -1917 109 -143 command_block 5 replace {Command:"/execute @p ~ ~ ~ /summon XPOrb ~ ~ ~ {Passengers:[{id:Arrow,xTile:880,yTile:21,zTile:-228,life:1200s}]}"}
+/setblock -1916 109 -143 chain_command_block 5 replace {Command:"/clone -1915 109 -143 -1915 109 -143 -1915 109 -143 filtered force minecraft:command_block 5",auto:1b}
+/setblock -1915 109 -143 command_block 5 replace {auto:1b,Command:"/summon ArmorStand 880.5 20.5 -227.5 {NoGravity:true,Invulnerable:true,UUIDMost:39,UUIDLeast:28,Tags:[\"SpfNP\"],Marker:true,Invisible:true,NoBasePlate:true,Small:true}"}
+/setblock -1914 109 -143 chain_command_block 5 keep {auto:1b,Command:"/fill -1917 109 -143 -1914 109 -143 air"}
+/blockdata -1917 109 -143 {auto:1b}
+/tellraw @a [{"text":"スペランカーパッチv2.0.2にアップデートしました。\n","color":"green","bold":true},{"text":"・パラソルを使用しているとき高所から落ちるとダメージで死んでしまうのを調節\n・地下世界の入り口の落下killを修正\n・コウモリを動物判定から削除\n・その他の細かい調整","color":"white","bold":false}]
