@@ -1,11 +1,74 @@
-/clone -1913 8 -123 -1909 8 -123 -1914 8 -123 replace move
-/blockdata -1920 13 -124 {Command:"/effect @a[tag=SpNFK] minecraft:jump_boost 5 255 true"}
-/blockdata -1919 13 -124 {Command:"/effect @a[tag=SpNFK] minecraft:levitation 1 252"}
-/clone -1909 9 -124 -1907 9 -124 -1910 9 -124 replace move
-/blockdata -1908 9 -124 {Command:"/scoreboard players set @a FlyCount 0 {ActiveEffects:[{Id:8b,Amplifier:-1b}]}"}
-/setblock -1917 109 -143 command_block 5 replace {Command:"/execute @p ~ ~ ~ /summon XPOrb ~ ~ ~ {Passengers:[{id:Arrow,xTile:880,yTile:21,zTile:-228,life:1200s}]}"}
-/setblock -1916 109 -143 chain_command_block 5 replace {Command:"/clone -1915 109 -143 -1915 109 -143 -1915 109 -143 filtered force minecraft:command_block 5",auto:1b}
-/setblock -1915 109 -143 command_block 5 replace {auto:1b,Command:"/summon ArmorStand 880.5 20.5 -227.5 {NoGravity:true,Invulnerable:true,UUIDMost:39,UUIDLeast:28,Tags:[\"SpfNP\"],Marker:true,Invisible:true,NoBasePlate:true,Small:true}"}
-/setblock -1914 109 -143 chain_command_block 5 keep {auto:1b,Command:"/fill -1917 109 -143 -1914 109 -143 air"}
-/blockdata -1917 109 -143 {auto:1b}
-/tellraw @a [{"text":"スペランカーパッチv2.0.2にアップデートしました。\n","color":"green","bold":true},{"text":"・パラソルを使用しているとき高所から落ちるとダメージで死んでしまうのを調節\n・地下世界の入り口の落下killを修正\n・コウモリを動物判定から削除\n・その他の細かい調整","color":"white","bold":false}]
+/scoreboard objectives add ExpID dummy 経験値保持同期用ID
+/scoreboard objectives add GotExp dummy 保存経験値量
+/scoreboard objectives add ExpSystemFlag dummy 経験値システム処理フラグ
+/scoreboard objectives add ArmorLevel dummy アマスタのレベル
+/scoreboard objectives add ArmorExpToLevel dummy アマスタの残り経験値
+/scoreboard objectives add ArmorNextExp dummy アマスタの次の経験値
+/scoreboard players set #NextExpID ExpID 1
+/fill -1918 8 -191 -1911 8 -191 air
+/setblock -1918 8 -191 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players operation @e[type=ArmorStand,tag=ExpEntity] GotExp += @a[score_GotExpFlag_min=1] GotExpFlag"}
+/setblock -1917 8 -191 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players set @a ExpSystemFlag 1"}
+/setblock -1916 8 -191 chain_command_block 5 replace {auto:1b,Command:"/clone -1920 11 -128 -1920 11 -128 -1920 11 -128 filtered force minecraft:command_block 5 ###プレイヤー経験値取得処理"}
+/setblock -1915 8 -191 chain_command_block 5 replace {auto:1b,Command:"/execute @e[tag=ExpEntity,type=ArmorStand] ~ ~ ~ scoreboard players operation @e[tag=ExpEntity,type=ArmorStand,c=1] ArmorExpToLevel -= @a[score_GotExpFlag_min=1] GotExpFlag"}
+/setblock -1914 8 -191 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players set @e[tag=ExpEntity,type=ArmorStand,score_ArmorExpToLevel=0,score_ArmorLevel=49] ExpSystemFlag 3"}
+/setblock -1913 8 -191 chain_command_block 13 replace {auto:1b,Command:"/clone -1920 10 -128 -1920 10 -128 -1920 10 -128 filtered force minecraft:command_block 5 ###アマスタ経験値取得処理"}
+/clone -1909 9 -192 -1908 9 -192 -1905 9 -192 replace move
+/setblock -1909 9 -192 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players set @a[score_LeaveGame_min=1,tag=!ExpEntity] ExpSystemFlag 5"}
+/setblock -1908 9 -192 chain_command_block 13 replace {auto:1b,Command:"/clone -1920 8 -128 -1920 8 -128 -1920 8 -128 filtered force minecraft:command_block 5 ###登録処理"}
+/setblock -1907 9 -192 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players set @a[score_LeaveGame_min=1] ExpSystemFlag 4"}
+/setblock -1906 9 -192 chain_command_block 13 replace {auto:1b,Command:"/clone -1920 12 -128 -1920 12 -128 -1920 12 -128 filtered force minecraft:command_block 5 ###オフライン時未取得経験値有無検査"}
+/clone -1890 8 -192 -1890 8 -192 -1888 8 -192 replace move
+/setblock -1890 8 -192 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players set @a[team=,c=1] ExpSystemFlag 5"}
+/setblock -1889 8 -192 chain_command_block 5 replace {auto:1b,Command:"/clone -1920 8 -128 -1920 8 -128 -1920 8 -128 filtered force minecraft:command_block 5 ###登録処理"}
+/clone -1883 12 -192 -1883 12 -192 -1881 12 -192 replace move
+/setblock -1883 12 -192 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players set @a[score_LoadJob_min=1] ExpSystemFlag 2"}
+/setblock -1882 12 -192 chain_command_block 5 replace {auto:1b,Command:"/clone -1920 9 -128 -1920 9 -128 -1920 9 -128 filtered force minecraft:command_block 5 ###転職時処理"}
+/setblock -1920 8 -128 command_block 5 replace {auto:1b,Command:""}
+/setblock -1919 8 -128 chain_command_block 5 replace {auto:1b,Command:"/summon ArmorStand ~ ~-0.5 ~ {Tags:[\"ExpEntity\",\"WillGetID\"],Small:true,Marker:true,NoGravity:true}"}
+/setblock -1918 8 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players operation @e[tag=WillGetID] ExpID = #NextExpID ExpID"}
+/setblock -1917 8 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players tag @e[tag=WillGetID] remove WillGetID"}
+/setblock -1916 8 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players add #NextExpID ExpID 1"}
+/setblock -1915 8 -128 chain_command_block 5 replace {auto:1b,Command:"/tellraw @a [{\"selector\":\"@a[tag=!ExpEntity,socre_ExpSystemFlag_min=5,score_ExpSystemFlag=5]\"},{\"text\":\" をID:\"},{\"score\":{\"objective\":\"ExpID\",\"name\":\"@a[tag=!ExpEntity,socre_ExpSystemFlag_min=5,score_ExpSystemFlag=5]\"}},{\"text\":\" でオフライン経験値ストレージとの紐づけをしました。\"}]"}
+/setblock -1914 8 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players tag @a[tag=!ExpEntity,socre_ExpSystemFlag_min=5,score_ExpSystemFlag=5] add ExpEntity"}
+/blockdata -1920 8 -128 {Command:"/scoreboard players operation @a[tag=!ExpEntity,socre_ExpSystemFlag_min=5,score_ExpSystemFlag=5] ExpID = #NextExpID ExpID"}
+/setblock -1920 9 -128 command_block 5 replace {auto:1b,Command:""}
+/setblock -1919 9 -128 chain_command_block 5 replace {auto:1b,Command:"execute @e[tag=ExpEntity,type=ArmorStand] ~ ~ ~ scoreboard players operation @e[type=ArmorStand,c=1] ExpMessageFlag -= @a[score_ExpSystemFlag=2,score_ExpSystemFlag=2] ExpID"}
+/setblock -1918 9 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players operation @e[score_ExpMessageFlag_min=0,score_ExpMessageFlag=0,type=ArmorStand] ArmorLevel = @a[score_ExpSystemFlag_min=2,score_ExpSystemFlag=2] Level"}
+/setblock -1917 9 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players operation @e[score_ExpMessageFlag_min=0,score_ExpMessageFlag=0,type=ArmorStand] ArmorExpToLevel = @a[score_ExpSystemFlag_min=2,score_ExpSystemFlag=2] ExpToLevel"}
+/setblock -1916 9 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players operation @e[score_ExpMessageFlag_min=0,score_ExpMessageFlag=0,type=ArmorStand] ArmorNextExp = @e[score_ExpMessageFlag_min=0,score_ExpMessageFlag=0] ArmorLevel"}
+/setblock -1915 9 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players add @e[score_ExpMessageFlag_min=0,score_ExpMessageFlag=0,type=ArmorStand] ArmorNextExp 1"}
+/setblock -1914 9 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players operation @e[score_ExpMessageFlag_min=0,score_ExpMessageFlag=0,type=ArmorStand] ArmorNextExp *= #ExpMul Const"}
+/setblock -1913 9 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players set @e[score_ExpMessageFlag_min=0,score_ExpMessageFlag=0,type=ArmorStand,score_ArmorExpToLevel=0] ExpSystemFlag 3"}
+/setblock -1912 9 -128 chain_command_block 13 replace {auto:1b,Command:"clone -1920 10 -128 -1920 10 -128 -1920 10 -128 filtered force minecraft:command_block 5"}
+/setblock -1911 9 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players reset @e[tag=ExpEntity,type=ArmorStand] ExpMessageFlag"}
+/setblock -1910 9 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players reset @a[score_ExpSystemFlag_min=2,score_ExpSystemFlag=2] ExpSystemFlag"}
+/blockdata -1920 9 -128 {Command:"/execute @e[type=!Player,tag=ExpEntity] ~ ~ ~ scoreboard players operation @e[type=ArmorStand,c=1] ExpMessageFlag = @e[type=ArmorStand,c=1] ExpID"}
+/setblock -1920 10 -128 command_block 5 replace {auto:1b,Command:""}
+/setblock -1919 10 -128 chain_command_block 5 replace {auto:1b,Command:"execute @e[score_ExpSystemFlag_min=3,score_ExpSystemFlag=3] ~ ~ ~ scoreboard players operation @e[type=ArmorStand,c=1] ArmorExpToLevel += @e[type=ArmorStand,c=1] ArmorNextExp"}
+/setblock -1918 10 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players add @e[score_ExpSystemFlag_min=3,score_ExpSystemFlag=3] ArmorNextExp 7"}
+/setblock -1917 10 -128 chain_command_block 5 replace {auto:1b,Command:"execute @e[score_ExpSystemFlag_min=3,score_ExpSystemFlag=3,score_ArmorLevel_min=50] ~ ~ ~ tellraw @a [{\"text\":\"ID:\",\"color\":\"green\"},{\"score\":{\"objective\":\"ExpID\",\"name\":\"@e[score_ExpSystemFlag_min=3,score_ExpSystemFlag=3,score_ArmorLevel_min=50,c=1]\"}},{\"text\":\" のプレイヤーのレベルが50になったようだ！\"}]"}
+/setblock -1916 10 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players reset @e[score_ArmorExpToLevel_min=1,tag=ExpEntity,type=ArmorStand] ExpSystemFlag"}
+/setblock -1915 10 -128 chain_command_block 5 replace {auto:1b,Command:"/testfor @e[score_ExpSystemFlag_min=3,score_ExpSystemFlag=3]"}
+/setblock -1914 10 -128 chain_command_block 13 replace {auto:1b,Command:"clone -1920 10 -128 -1920 10 -128 -1920 10 -128 filtered force minecraft:command_block 5 ###リピート"}
+/blockdata -1920 10 -128 {Command:"/scoreboard players add @e[score_ExpSystemFlag_min=3,score_ExpSystemFlag=3] ArmorLevel 1"}
+/setblock -1920 11 -128 command_block 5 replace {auto:1b,Command:""}
+/setblock -1919 11 -128 chain_command_block 5 replace {auto:1b,Command:"/execute @e[type=!Player,tag=ExpEntity] ~ ~ ~ scoreboard players operation @e[type=ArmorStand,c=1] ExpMessageFlag = @e[type=ArmorStand,c=1] ExpID"}
+/setblock -1918 11 -128 chain_command_block 5 replace {auto:1b,Command:"execute @e[tag=ExpEntity,type=ArmorStand] ~ ~ ~ scoreboard players operation @e[type=ArmorStand,c=1] ExpMessageFlag -= @a[tag=WillGetExp] ExpID"}
+/setblock -1917 11 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players operation @a[tag=WillGetExp] ExpToLevel -= @e[score_ExpMessageFlag_min=0,score_ExpMessageFlag=0] GotExp"}
+/setblock -1916 11 -128 chain_command_block 5 replace {auto:1b,Command:"/execute @a[tag=WillGetExp] ~ ~ ~ /tellraw @a {\"translate\":\"%1$sは%2$sEXPの経験値を得た。\",\"color\":\"yellow\",\"with\":[{\"selector\":\"@a[]\"},{\"score\":{\"name\":\"@e[score_ExpMessageFlag_min=0,score_ExpMessageFlag=0]\",\"objective\":\"GotExp\"},\"color\":\"white\",\"bold\":\"true\"}]}"}
+/setblock -1915 11 -128 chain_command_block 5 replace {auto:1b,Command:"/execute @a[tag=WillGetExp] ~ ~ ~ playsound entity.player.levelup master @a[c=1] ~ ~ ~ 0.3 2"}
+/setblock -1914 11 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players reset @e[score_ExpMessageFlag_min=0,score_ExpMessageFlag=0] GotExp"}
+/setblock -1913 11 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players reset @a[tag=WillGetExp] ExpSystemFlag"}
+/setblock -1912 11 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players tag @a remove WillGetExp"}
+/setblock -1911 11 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players reset @e[tag=ExpEntity,type=ArmorStand] ExpMessageFlag"}
+/setblock -1910 11 -128 chain_command_block 5 replace {auto:1b,Command:"/testfor @a[score_ExpSystemFlag_min=1,score_ExpSystemFlag=1]"}
+/setblock -1909 11 -128 chain_command_block 13 replace {auto:1b,Command:"/clone -1920 11 -128 -1920 11 -128 -1920 11 -128 filtered force minecraft:command_block 5 ###リピート"}
+/blockdata -1920 11 -128 {Command:"/scoreboard players tag @r[score_ExpSystemFlag_min=1,score_ExpSystemFlag=1] add WillGetExp"}
+/setblock -1920 12 -128 command_block 5 replace {auto:1b,Command:""}
+/setblock -1919 12 -128 chain_command_block 5 replace {auto:1b,Command:"execute @e[tag=ExpEntity,type=ArmorStand] ~ ~ ~ scoreboard players operation @e[type=ArmorStand,c=1] ExpMessageFlag -= @a[score_ExpSystemFlag=4,score_ExpSystemFlag=4] ExpID"}
+/setblock -1918 12 -128 chain_command_block 5 replace {auto:1b,Command:"execute @e[score_ExpMessageFlag_min=0,score_ExpMessageFlag=0,score_GotExp_min=1] ~ ~ ~ scoreboard players set @a[score_ExpSystemFlag_min=4,score_ExpSystemFlag=4] ExpSystemFlag 1"}
+/setblock -1917 12 -128 chain_command_block 5 replace {auto:1b,Command:"/scoreboard players reset @a[score_ExpSystemFlag_min=4,score_ExpSystemFlag=4] ExpSystemFlag"}
+/setblock -1916 12 -128 chain_command_block 5 replace {auto:1b,Command:"/testfor @a[score_ExpSystemFlag_min=1,score_ExpSystemFlag=1]"}
+/setblock -1915 12 -128 chain_command_block 5 replace {auto:1b,Command:"/clone -1920 11 -128 -1920 11 -128 -1920 11 -128 filtered force minecraft:command_block 5 ###プレイヤー経験値取得処理"}
+/blockdata -1920 12 -128 {Command:"/execute @e[type=!Player,tag=ExpEntity] ~ ~ ~ scoreboard players operation @e[type=ArmorStand,c=1] ExpMessageFlag = @e[type=ArmorStand,c=1] ExpID"}
+tellraw @a [{"translate":"オフライン経験値取得パッチ%1$s の導入に成功しました。\n","with":[{"text":"Ver.1.3","color":"blue","bold":true}]},{"text":"全員再ログインをしてください。\n","bold":true,"color":"red"},{"text":"登録IDとプレイヤー名をメモしておくと、後々役に立ちます。\n","color":"yellow"},{"text":"不具合などは、"},{"translate":"Twitter/%1$s","color":"aqua","with":[{"text":"@nepon13","color":"aqua","clickEvent":{"action":"open_url","value":"https://twitter.com/nepon13"},"hoverEvent":{"action":"show_text","value":"ここをクリックするとページが開きます。"}}]},{"text":" にお願いします。","color":"white"}]
