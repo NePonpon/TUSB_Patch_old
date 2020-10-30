@@ -76,4 +76,4 @@ idを指定する場合、指定されたパッチ目印を上書きするかど
 #テンプレート
 
 !SUCCESS:{"text":"<Patch_name>パッチの導入に成功しました！\nby Ponpon Twitter/ @nepon13","color":"green"}
-!FAILURE:{"text":"パッチの導入に失敗しました。\nすでにこのパッチは導入済みの可能性があります。","color":"red"}
+!FAILURE:{"text":"パッチの導入に失敗しました。\nすでにこのパッチは導入済みか競合するパッチが挿入されている可能性があります。","color":"red"}

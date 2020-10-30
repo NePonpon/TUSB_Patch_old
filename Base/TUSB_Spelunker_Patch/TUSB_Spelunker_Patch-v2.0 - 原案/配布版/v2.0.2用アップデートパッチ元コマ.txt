@@ -1,4 +1,4 @@
-#SpelukerPatch-v2.0.2—pƒAƒbƒvƒf[ƒgƒpƒbƒ`
+#SpelukerPatch-v2.0.2ç”¨ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆãƒ‘ãƒƒãƒ
 #java -jar ezpatch.jar wool@14 -i before.txt -o after.txt -c -1
 
 /fill -1906 9 -200 -1905 9 -200 air
@@ -15,4 +15,4 @@ setblock -1909 8 -123 minecraft:chain_command_block 5 replace {Command:/scoreboa
 /setblock -1922 11 -124 wool 14
 /setblock -1922 13 -124 wool 14
 /setblock -1922 8 -123 wool 14
-!SUCCESS:{"text":"ƒXƒyƒ‰ƒ“ƒJ[ƒpƒbƒ`‚ğ2.1.0‚ÉƒAƒbƒvƒf[ƒg‚µ‚Ü‚µ‚½I\nby Ponpon Twitter/ @nepon13","color":"green"}
+!SUCCESS:{"text":"ã‚¹ãƒšãƒ©ãƒ³ã‚«ãƒ¼ãƒ‘ãƒƒãƒã‚’2.1.0ã«ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆã—ã¾ã—ãŸï¼\nby Ponpon Twitter/ @nepon13","color":"green"}
