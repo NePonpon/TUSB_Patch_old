@@ -1,11 +1,9 @@
 ﻿###SpelunkerPatch-v2.1.0
 ###patch_id:wool@14
 ---
-最終更新:2020/10/25
+最終更新:2020/12/02
 更新内容
-・引用符とバックスラッシュ(エスケープ)の大幅削減
-  召喚士が召喚するオオカミにSpAが付与されないように変更 +1command
-  不必要なコマンドを削除 -1command
+・召喚士のウルフの除外判定要素を変更
 ---
 ###導入パッチ_1
 ###java -jar ezpatch.jar wool@14 -i before.txt -o after.txt -c 15 -u -1922,4,-124;-1922,8,-124;-1922,9,-124;-1922,10,-124;-1922,11,-124;-1922,8,-177;-1922,14,-188;-1922,9,-189;-1922,8,-123
@@ -117,7 +115,7 @@ setblock -1913 8 -123 minecraft:chain_command_block 5 replace {Command:/scoreboa
 setblock -1912 8 -123 minecraft:chain_command_block 5 replace {Command:/scoreboard players tag @e[tag=!SpA,type=PolarBear] add SpA,auto:1b}
 setblock -1911 8 -123 minecraft:chain_command_block 5 replace {Command:/scoreboard players tag @e[tag=!SpA,type=MushroomCow] add SpA,auto:1b}
 setblock -1910 8 -123 minecraft:chain_command_block 5 replace {Command:/scoreboard players tag @e[tag=SpA,type=Pig] remove SpA {Saddle:1b},auto:1b}
-setblock -1909 8 -123 minecraft:chain_command_block 5 replace {Command:/scoreboard players tag @e[tag=SpA,type=Wolf] remove SpA {Attributes:[{Name:generic.maxHealth,Base:30d}]},auto:1b}
+setblock -1909 8 -123 minecraft:chain_command_block 5 replace {Command:/scoreboard players tag @e[tag=SpA,type=Wolf] remove SpA {ArmorItems:[{id:"minecraft:bone"}]}
 ---
 ###導入パッチ_2
 ###java -jar ezpatch.jar wool@14 -i before.txt -o after.txt -c 15 -u -1922,4,-125;-1922,13,-124
