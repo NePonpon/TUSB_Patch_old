@@ -1,4 +1,4 @@
-﻿###SpelunkerPatch-v2.1.0
+﻿###SpelunkerPatch-v2.1.1
 ###patch_id:wool@14
 ---
 最終更新:2020/12/02
